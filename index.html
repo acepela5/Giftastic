@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>It's GIFtastic!</title>
 </head>
 <body>
+    <div class="container">
+        <!-- div for the buttons -->
+        <div id="gifButton"></div>
+        <!-- form to add more gifs -->
+
+        <!-- div for the gifs -->
+        <div id="gifDisplay"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    var myGifs = ["unicorns", "food", "gym", "ice cream", "chocolate"]
     
+    function displayMyGifs() {
+        var gif = $(this).attr("data-name");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q="+gif + "api_key=RpbF7yK9jdJvEIcxqxFvfqB36r3852SI&limit10";
+        
+        ajax({
+            url: queryURL,
+            method: "GET"
+        }) 
+        .then(function(response){
+            var results = response.data;
+            console.log(response);
+            for (var i=0; i < results.length; i++) {
+                var gifDiv = $("<div>");
+
+                var rating = results[i].data.rating;
+                
+                var p = $("<p>").text("Rating: " + rating);
+
+                var chosenGif = $("<img>");
+                chosenGif.attr("src", results[i].data.images.fixed_height_small_still);
+                // next need results[i].data.images.fixed_height_small
+                
+                gifDiv.prepend(p);
+                gifDiv.prepend(chosenGif);
+
+                $("#gifDisplay").prepend(gifDiv);
+            }
+
+
+        });
+    };
+    </script>
 </body>
 </html>
