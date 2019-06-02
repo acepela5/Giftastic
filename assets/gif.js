@@ -1,6 +1,9 @@
-//  var myGifs = ["unicorns", "food", "gym", "ice cream", "chocolate"]
+$(document).ready(function(){
+// array for the first gif buttons displayed
+var myGifs = ["unicorns", "food", "gym", "ice cream", "chocolate"]
 
 function displayMyGifs() {
+    // gif becomes the function with the attribute of data-name
     var gif = $(this).attr("data-name");
     var apiKey = '0ShrzayuUNFBiOJCMLWcRZqyntsbep5T';
     var queryURL = `https://api.giphy.com/v1/gifs/search?q=${gif}&api_key=${apiKey}&limit=10`;
@@ -9,53 +12,46 @@ function displayMyGifs() {
         url: queryURL,
         method: "GET"
     })
-        .then(function (response) {
-
-            var results = response.data; // -> [.....]
+        .then(function(response) {
+// goes into the data array
+            var results = response.data; 
 
             for (var i = 0; i < results.length; i++) {
                 var gifDiv = $(`<div>`);
-
+// gets the rating info
                 var rating = results[i].rating;
+// turns ratings into a dynamic paragraph
                 var p = $("<p>").text("Rating: " + rating);
-
+// creates dynamic images with the class myGif
                 var gifImage = $(`<img class="myGif">`);
-                // var movingGif = results[i].images.fixed_height_small.url;
-                // var stillGif = results[i].images.fixed_height_small_still.url;
-
+// sources for the still gifs and animated gifs
                 var gif ={
                     still: results[i].images.fixed_height_small_still.url,
                     moving: results[i].images.fixed_height_small.url
                 }
-
-                // gifImage.attr("src", stillGif);
-                // gifImage.attr("data-source-still", stillGif)
-                // gifImage.attr("data-source-moving", movingGif)
-                // gifImage.attr("data-animate", "still")
-
+                // the source is gif/still
                 gifImage.attr("src", gif.still);
+                // data-source-still is gif.still
                 gifImage.attr("data-source-still", gif.still)
+                // data-source-moving is gif.moving
                 gifImage.attr("data-source-moving", gif.moving)
+                // attributing both moving and still to gifImage
                 gifImage.attr("data-animate", "still")
 
-
-
-
+                // puts the image first and then the paragraph with the rating text. New searches are added in front
                 gifDiv.prepend(p);
                 gifDiv.prepend(gifImage);
 
                 $("#gif-view").prepend(gifDiv);
 
             }
-
-
         });
 };
 
 function renderButtons() {
-    // deletes previous search
+    // prevents multiple searches from happening
     $("#buttons-view").empty();
-
+// creates dynamic buttons with the search term as their text
     for (var i = 0; i < myGifs.length; i++) {
         var a = $("<button>");
         a.addClass("gif");
@@ -68,7 +64,7 @@ function renderButtons() {
 $("#add-gif").on("click", function (event) {
     event.preventDefault();
     var userGif = $("#gif-input").val().trim();
-
+// pushes searched terms into the original array
     myGifs.push(userGif);
     renderButtons();
 });
@@ -94,3 +90,4 @@ function changeState() {
 }
 
 renderButtons();
+});
