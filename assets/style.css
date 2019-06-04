@@ -1,0 +1,57 @@
+body {
+    background-image: url(./images/fastfood.png);
+    /*  <a href="https://pngtree.com/free-backgrounds">free background photos from pngtree.com</a> */
+
+    background-size: 100%;
+    background-repeat: repeat;
+}
+
+.container {
+    background-color: #ffa6cb;
+    min-height: 100px;
+    width: 500px;
+    position: relative;
+    left: 400px;
+    font-family: 'Patrick Hand', cursive;
+    
+}
+
+#gif-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 20px;
+    top: 10px;
+    height: 20px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    border-radius: 5px;
+    color: #5e1c38;
+
+}
+#words {
+    position: relative;
+    left: 10px;
+    font-size: 30px;
+    color: #5e1c38;
+}
+#add-gif {
+    position: relative;
+    left: 40px;
+    top: 10px;
+    background-color: #f7e63e;
+    border-color: #f7e63e;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    border-radius: 5px;
+    color: #5e1c38;
+    height: 30px;
+
+}
+#gif-form {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    border-radius: 10px;
+}

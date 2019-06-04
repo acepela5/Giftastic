@@ -1,6 +1,6 @@
 $(document).ready(function(){
 // array for the first gif buttons displayed
-var myGifs = ["unicorns", "food", "gym", "ice cream", "chocolate"]
+var myGifs = ["donuts", "food", "hamburger", "ice cream", "chocolate"]
 
 function displayMyGifs() {
     // gif becomes the function with the attribute of data-name
@@ -22,9 +22,20 @@ function displayMyGifs() {
                 var rating = results[i].rating;
 // turns ratings into a dynamic paragraph
                 var p = $("<p>").text("Rating: " + rating);
+                p.css("font-size", "20px")
+                p.css("position", "relative")
+                p.css("left", "15px")
+                p.css("color", "#5e1c38")
+
 // creates dynamic images with the class myGif
                 var gifImage = $(`<img class="myGif">`);
 // sources for the still gifs and animated gifs
+                gifImage.css("border-radius", "3px");
+                gifImage.css("position", "relative");
+                gifImage.css("top", "5px");
+                gifImage.css("left", "15px");
+
+
                 var gif ={
                     still: results[i].images.fixed_height_small_still.url,
                     moving: results[i].images.fixed_height_small.url
@@ -58,6 +69,21 @@ function renderButtons() {
         a.attr("data-name", myGifs[i]);
         a.text(myGifs[i]);
         $("#buttons-view").append(a);
+        $("button").css("border-radius", "3px");
+        $("button").css("background-color", "#ff6997");
+        $("button").css("border-color", "#ff6997");
+        $("button").css("padding", "3px");
+        $("button").css("position", "relative");
+        $("button").css("top", "5px");
+        $("button").css("margin", "3px");
+        $("button").css("left", "5px");
+        $("button").css("font-family", "Patrick Hand, cursive");
+        $("button").css("font-size", "20px");
+        $("button").css("color", "#5e1c38");
+        $("button").css("font-weight", "bold");
+        $("button").css("height", "35px");
+
+
     }
 }
 
