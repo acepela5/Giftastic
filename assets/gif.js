@@ -69,7 +69,7 @@ function renderButtons() {
         a.attr("data-name", myGifs[i]);
         a.text(myGifs[i]);
         $("#buttons-view").append(a);
-        $("button").css("border-radius", "3px");
+        $("button").css("border-radius", "5px");
         $("button").css("background-color", "#ff6997");
         $("button").css("border-color", "#ff6997");
         $("button").css("padding", "3px");

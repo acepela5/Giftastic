@@ -13,7 +13,7 @@ body {
     position: relative;
     left: 400px;
     font-family: 'Patrick Hand', cursive;
-    
+    border-radius: 5px;
 }
 
 #gif-input {
