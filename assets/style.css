@@ -55,3 +55,21 @@ body {
     justify-content: left;
     border-radius: 10px;
 }
+
+#credit {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5e1c38;
+    background-color: #65dbcf;
+    font-family: 'Patrick Hand', cursive;
+
+}
+
+#image {
+    height: 30px;
+    widows: 30px;
+}
