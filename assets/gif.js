@@ -86,13 +86,25 @@ function renderButtons() {
 
     }
 }
-
+// if user presses enter without putting in a search term, nothing will be added.
+// if user adds a search term already used, nothing will be added.
+var userGif = $("#gif-input").val().trim();
 $("#add-gif").on("click", function (event) {
     event.preventDefault();
-    var userGif = $("#gif-input").val().trim();
+    for(var i=0; i< myGifs.length; i++) {
+        if(myGifs.indexOf(userGif)=== -1) {
+    }
+    
+    if (userGif.length > 0) {
+        
+    
 // pushes searched terms into the original array
     myGifs.push(userGif);
+
     renderButtons();
+    }
+    
+}
 });
 
 $(document).on("click", ".gif", displayMyGifs);
