@@ -90,9 +90,11 @@ $(document).ready(function(){
 
         if (!userGif) {
             console.log("needs a search term")
+            alert("Add a valid search")
         }
         else if(myGifs.indexOf(userGif) !== -1) {
                 console.log("term already used")
+                alert("Search term already added. Try a new one!")
         }
         else{
              // pushes searched terms into the original array
