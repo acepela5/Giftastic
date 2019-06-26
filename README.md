@@ -14,7 +14,7 @@ In the GIFtastic website, I use JQuery and an API key to pull gifs from Giphy.co
 ## Screenshot
 ---
 
-![ ](screen1.png)
+![ ](/Screenshot(37).png)
 
 ## Comments
 ---
