@@ -9,11 +9,19 @@ body {
 .container {
     background-color: #ffa6cb;
     min-height: 100px;
-    width: 500px;
-    position: relative;
-    left: 400px;
+    position: absolute;
+    top: 100px;
     font-family: 'Patrick Hand', cursive;
     border-radius: 5px;
+    max-width: 100px;
+}
+
+#contain {
+    max-width: 500px;
+}
+
+.row {
+    max-width: 500px; 
 }
 
 #gif-input {
@@ -38,8 +46,8 @@ body {
 }
 #add-gif {
     position: relative;
-    left: 40px;
-    top: 10px;
+    left: -40px;
+    top: 40px;
     background-color: #f7e63e;
     border-color: #f7e63e;
     font-family: 'Patrick Hand', cursive;

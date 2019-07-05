@@ -8,22 +8,31 @@
         <title>It's GIFtastic!</title>
         <link rel="stylesheet" href="./assets/style.css">
         <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+        <link rel="icon" href="./assets/images/icons8-kawaii-ice-cream-48.png" type="image/x-icon">
+
+         <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
 
     <body>
-        <div class="container">
+        <div class="container" id="contain">
+            <div class="row">
+                <div class="col s1"></div>
             <!-- div for the buttons -->
             <div id="buttons-view"></div>
+        </div>
             <!-- form to add more gifs -->
+            <div class="row">
             <form id="gif-form">
                 <label id="words" for="gif-input">Add your own GIF</label>
                 <input type="text" id="gif-input"><br>
                 <input id="add-gif" type="submit" value="GIF-it">
             </form>
+
             <!-- div for the gifs -->
             <div id="gif-view"></div>
         </div>
-
+        </div>
         <div id="credit">Powered by GPIHY.com<img id="image" src="./assets/images/giphy.png"></div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
