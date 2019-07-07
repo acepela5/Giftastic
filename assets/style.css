@@ -83,3 +83,8 @@ body {
     height: 30px;
     widows: 30px;
 }
+
+#modalTrigger {
+    position: absolute;
+    margin: 10px;
+}

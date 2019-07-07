@@ -1,6 +1,8 @@
 $(document).ready(function(){
+// open modal with instructions
+        $('.modal').modal();
     // array for the first gif buttons displayed
-    var myGifs = ["donuts", "food", "hamburger", "ice cream", "chocolate"]
+    var myGifs = ["fries", "food", "cake", "ice cream", "soda"]
 
     function displayMyGifs() {
         // gif becomes the function with the attribute of data-name

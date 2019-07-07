@@ -2,7 +2,9 @@
 
 ## Overview
 ---
-In the GIFtastic website, I use JQuery and an API key to pull gifs from Giphy.com.
+In this GIFtastic website, JQuery and an API key are used to pull gifs from Giphy.com. Simply click on 
+one of the search buttons to show the first ten gifs using that word. You can also create your own button by
+adding a word in the text box and creating the button. Click once on a gif to animate it and the second click will pause it.
 
 ## Built With
 ---
